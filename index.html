@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js Creative Coding Studio</title>
+    <style>
+        /* 기본 스타일 초기화 및 고급스러운 다크톤 배경 설정 */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121214;
+            color: #ffffff;
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 타이틀 영역 스타일 수정 */
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #63e6be; /* 트렌디한 민트 포인트 컬러 */
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #868e96;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* 핵심 요구사항: 완전히 새로운 구조의 2행 2열 독립 격자 레이아웃 */
+        .gallery-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            max-width: 1300px;
+            width: 100%;
+        }
+
+        /* 심미성을 극대화한 개별 카드 프레임 */
+        .art-card {
+            background-color: #1e1e22;
+            border: 1px solid #2a2a30;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* 마우스를 올리면 부드럽게 떠오르고 테두리 색이 바뀌는 심미적 효과 */
+        .art-card:hover {
+            transform: translateY(-6px);
+            border-color: #63e6be;
+            box-shadow: 0 20px 38px rgba(99, 230, 190, 0.15);
+        }
+
+        /* 과제 라벨 스타일 */
+        .art-card .tag {
+            align-self: flex-start;
+            background-color: #2c2c35;
+            color: #a0aec0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            border: 1px solid #3f3f46;
+        }
+
+        /* p5.js 캔버스(600x400)가 깨지거나 스크롤바가 생기지 않도록 일대일 크기로 완벽 지정 */
+        .art-card iframe {
+            width: 600px;
+            height: 400px;
+            border: none;
+            border-radius: 8px;
+            background-color: #252529;
+        }
+
+        /* 하단 카피라이트 영역 추가 */
+        footer {
+            margin-top: 60px;
+            color: #4a5568;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Creative Coding Studio</h1>
+        <p>정적 및 동적 시각 예술 작품 포트폴리오</p>
+    </header>
+
+    <main class="gallery-matrix">
+
+        <section class="art-card">
+            <span class="tag">TASK 01 / 정적 작품</span>
+            <iframe src="sample1/index.html" scrolling="no"></iframe>
+        </section>
+
+        <section class="art-card">
+            <span class="tag">TASK 04 / 동적 인터랙션</span>
+            <iframe src="sample4/index.html" scrolling="no"></iframe>
+        </section>
+
+        <section class="art-card">
+            <span class="tag">TASK 02 / 정적 작품</span>
+            <iframe src="sample2/index.html" scrolling="no"></iframe>
+        </section>
+
+        <section class="art-card">
+            <span class="tag">TASK 03 / 동적 인터랙션</span>
+            <iframe src="sample3/index.html" scrolling="no"></iframe>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Interactive Art Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
