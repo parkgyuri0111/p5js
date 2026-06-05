@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js Creative Cyber Studio</title>
+    <style>
+        /* 1. 독창적인 우주/사이버 톤의 그라데이션 배경 및 폰트 설정 */
+        body {
+            font-family: 'Courier New', Courier, monospace, sans-serif; /* 개발자 감성의 모던 폰트 */
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0f0f1a 100%);
+            color: #00ffcc; /* 사이버네틱 민트색을 기본 텍스트 컬러로 지정 */
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 2. 미래지향적인 네온 헤더 디자인 */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f; /* 핫핑크 네온 글래어 효과 */
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            color: #8a8ab0;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        /* 3. 독창적인 격자 배치 구조와 비대칭 라인 디자인 */
+        .gallery-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 45px;
+            max-width: 1350px;
+            width: 100%;
+            position: relative;
+        }
+
+        /* 4. 미래형 하이테크 디스플레이 패널 스타일 카드 (심미성 핵심) */
+        .art-card {
+            background: rgba(25, 25, 45, 0.65);
+            border: 2px dashed #00ffcc; /* 독창적인 대시(점선) 형태의 테두리 */
+            border-radius: 24px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            backdrop-filter: blur(10px); /* 유리 뒤로 흐려지는 고급 글래스모피즘 효과 */
+            box-shadow: inset 0 0 20px rgba(0, 255, 204, 0.1), 0 15px 35px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* [독창적 마우스 호버 효과] 카드가 확대되면서 테두리가 핫핑크 네온으로 실시간 변신 */
+        .art-card:hover {
+            transform: scale(1.03) translateY(-5px);
+            border: 2px solid #ff007f;
+            box-shadow: inset 0 0 20px rgba(255, 0, 127, 0.2), 0 25px 50px rgba(255, 0, 127, 0.3);
+        }
+
+        /* 상단 라벨 디자인 고도화 */
+        .art-card .tag {
+            align-self: flex-start;
+            background: linear-gradient(90deg, #ff007f, #7928ca);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(255, 0, 127, 0.3);
+        }
+
+        /* 5. p5.js 캔버스를 담는 디스플레이 화면 */
+        .art-card iframe {
+            width: 600px;
+            height: 400px;
+            border: 3px solid #111122;
+            border-radius: 12px;
+            background-color: #000000;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+
+        /* 하단 디자인 영역 */
+        footer {
+            margin-top: 80px;
+            color: #5f5f87;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Creative Cyber Studio</h1>
+        <p>[ SYSTEM ACTIVATED : 2행 2열 정적 & 동적 매트릭스 ]</p>
+    </header>
+
+    <main class="
